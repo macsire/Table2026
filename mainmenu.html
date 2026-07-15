@@ -8,8 +8,8 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Georgia','標楷體','DFKai-SB',serif;
-  background: #fff;
-  color: #1a1a1a;
+  background: #ffffff;
+  color: #222222;
   min-height: 100vh;
   color-scheme: light only;
 }
@@ -118,25 +118,25 @@ body {
 }
 .sidebar-scroll { flex: 1; overflow-y: auto; padding: 16px 0 0; }
 .sidebar-label {
-  font-size: 0.62rem; letter-spacing: 0.3em; color: #b09060;
-  padding: 0 18px 10px; text-transform: uppercase;
+  font-size: 0.75rem; letter-spacing: 0.15em; color: #633A27;
+  padding: 0 18px 10px; font-weight: bold;
 }
 .yr-group { margin-bottom: 2px; }
 .yr-label {
-  font-size: 0.65rem; color: #c9a84c; letter-spacing: 0.2em;
+  font-size: 0.75rem; color: #8A5700; letter-spacing: 0.2em;
   padding: 8px 18px 3px; font-weight: bold;
 }
 .nav-btn {
   display: block; width: 100%; text-align: left;
-  padding: 8px 18px 8px 26px;
+  padding: 9px 18px 9px 26px;
   border: none; background: none; cursor: pointer;
-  font-family: inherit; font-size: 0.88rem; color: #5a4a2a;
+  font-family: inherit; font-size: 1rem; color: #222222;
   letter-spacing: 0.03em; transition: all 0.12s;
   border-left: 3px solid transparent;
 }
-.nav-btn:hover { background: rgba(201,168,76,0.12); color: #2a1f0a; }
-.nav-btn.active { background: rgba(201,113,15,0.1); color: #c9710f; border-left-color: #c9710f; font-weight: bold; }
-.nav-btn .d-small { display: block; font-size: 0.65rem; color: #b09060; margin-top: 1px; }
+.nav-btn:hover { background: #FFF7E6; color: #633A27; }
+.nav-btn.active { background: #FFF7E6; color: #633A27; border-left-color: #633A27; font-weight: bold; }
+.nav-btn .d-small { display: block; font-size: 0.72rem; color: #8A5700; margin-top: 2px; font-weight: normal; }
 .sidebar-footer {
   padding: 14px 16px;
   border-top: 1px solid #e8e0c8;
@@ -341,11 +341,11 @@ body {
 .pc-close { position:absolute; top:13px; right:14px; background:none; border:none; cursor:pointer; color:#b09060; font-size:0.95rem; padding:4px 7px; font-family:inherit; }
 .pc-do { position:absolute; top:13px; right:72px; background:none; border:1px solid #c9a84c; border-radius:3px; cursor:pointer; color:#6f6539; font-size:0.76rem; letter-spacing:0.1em; padding:4px 11px; font-family:inherit; }
 .pc-do:hover { background:#6f6539; color:#fff; }
-.pc-eyebrow { font-size:0.6rem; letter-spacing:0.42em; color:#b09060; text-align:center; margin-bottom:8px; text-transform:uppercase; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-tailo { font-size:0.72rem; letter-spacing:0.22em; color:#8b7040; text-align:center; margin-bottom:18px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,#c9a84c 30%,#c9a84c 70%,transparent); margin-bottom:26px; }
-.pc-title { font-size:1.9rem; color:#2a1f0a; text-align:center; letter-spacing:0.14em; font-weight:bold; line-height:1.2; margin-bottom:6px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-date { font-size:0.78rem; color:#b09060; text-align:center; letter-spacing:0.2em; margin-bottom:28px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-eyebrow { font-size:0.6rem; letter-spacing:0.42em; color:#8A5700; text-align:center; margin-bottom:8px; text-transform:uppercase; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-tailo { font-size:0.72rem; letter-spacing:0.22em; color:#633A27; text-align:center; margin-bottom:18px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,#D99414 30%,#D99414 70%,transparent); margin-bottom:26px; }
+.pc-title { font-size:1.9rem; color:#222222; text-align:center; letter-spacing:0.14em; font-weight:bold; line-height:1.2; margin-bottom:6px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-date { font-size:0.78rem; color:#8A5700; text-align:center; letter-spacing:0.2em; margin-bottom:28px; font-family:'SweiB2SugarBold','Georgia',serif; }
 .pc-mid { width:56px; height:1px; background:#c9a84c; margin:0 auto 26px; }
 .pc-dishes { flex:1; list-style:none; }
 .pc-dish { display:flex; align-items:baseline; gap:10px; padding:6px 0; border-bottom:1px dotted #e0d0b0; font-size:0.98rem; color:#1a1a1a; font-family:'B2Hana','Georgia',serif; }
@@ -553,7 +553,7 @@ select.isel:focus { outline:none; border-color:#c9710f; }
     <!-- sidebar -->
     <aside class="menu-sidebar">
       <div class="sidebar-scroll">
-        <div class="sidebar-label">節慶目錄</div>
+        <div class="sidebar-label">請選擇節日</div>
         <div id="navList"></div>
       </div>
       <div class="sidebar-footer">
@@ -1140,12 +1140,12 @@ function updateShoppingPanel() {
 // 台羅對照表
 // ════════════════════════════════════════════════
 const TAILO_MAP = {
-  '除夕': { tailo: 'ÛI-LÔ KÒE-NÎ',       hanzi: '圍爐過年' },
-  '初二': { tailo: 'CHHOE-JĪ',            hanzi: '初二回門' },
-  '清明': { tailo: 'CHHENG-BÎNG',         hanzi: '清明掃墓' },
-  '端午': { tailo: 'TOAN-GÓ·',            hanzi: '端午節'   },
-  '中元': { tailo: 'TIONG-GOÂN-CHIAT',    hanzi: '中元節'   },
-  '重陽': { tailo: 'TIONG-IONG-CHIAT',    hanzi: '重陽節'   },
+  '除夕': { hanzi: '年夜飯',  tailo: 'Kòe-nî-pn̄g'       },
+  '初二': { hanzi: '回娘家',  tailo: 'Tńg guā-ke'         },
+  '清明': { hanzi: '三月節',  tailo: 'Saⁿ-goe̍h cheh'     },
+  '端午': { hanzi: '五日節',  tailo: 'Gō͘-ji̍t cheh'      },
+  '中元': { hanzi: '中元節',  tailo: 'Tiong-goân cheh'    },
+  '重陽': { hanzi: '重陽節',  tailo: 'Tiông-iông-cheh'    },
 };
 
 // ════════════════════════════════════════════════
@@ -1161,11 +1161,14 @@ function openPrint() {
 
   document.getElementById('pc-eyebrow').textContent = yr;
   document.getElementById('pc-tailo').textContent   = tl ? `${tl.hanzi}　${tl.tailo}` : fest;
-  document.getElementById('pc-title').textContent   = fest;
+  document.getElementById('pc-title').innerHTML     = `❉ ${fest} ❉`;
   document.getElementById('pc-date').textContent    = menu.date;
-  document.getElementById('pc-dishes').innerHTML    = menu.dishes.map((d, i) =>
-    `<li class="pc-dish"><span class="pc-dnum">${String(i + 1).padStart(2, '0')}</span><span>${d.name}</span></li>`
-  ).join('');
+  document.getElementById('pc-dishes').innerHTML    = menu.dishes.map((d, i) => {
+    const vegMark = d.note && d.note.includes('素')
+      ? ' <span style="font-size:0.7rem;color:#3a6020;background:#f0f8e8;border:1px solid #a8d080;border-radius:2px;padding:0 4px;font-family:inherit">素</span>'
+      : '';
+    return `<li class="pc-dish"><span class="pc-dnum">${String(i + 1).padStart(2, '0')}</span><span>${d.name}${vegMark}</span></li>`;
+  }).join('');
   document.getElementById('printOverlay').classList.add('open');
 }
 function closePrint() { document.getElementById('printOverlay').classList.remove('open'); }
