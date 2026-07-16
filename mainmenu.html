@@ -335,26 +335,32 @@ body {
 .print-overlay.open { display: flex; }
 .print-card {
   background: #fffef8; border: 1px solid #c9a84c;
-  width: 460px; min-height: 520px; padding: 50px 46px 46px;
+  width: 460px; height: 640px; padding: 28px 40px 24px;
   position: relative; box-shadow: 0 12px 60px rgba(40,28,8,0.4);
   display: flex; flex-direction: column;
 }
-.print-card::before { content:''; position:absolute; inset:8px; border:1px solid rgba(201,168,76,0.35); pointer-events:none; }
-.pc-close { position:absolute; top:13px; right:14px; background:none; border:none; cursor:pointer; color:#b09060; font-size:0.95rem; padding:4px 7px; font-family:inherit; }
-.pc-do { position:absolute; top:13px; right:72px; background:none; border:1px solid #c9a84c; border-radius:3px; cursor:pointer; color:#6f6539; font-size:0.76rem; letter-spacing:0.1em; padding:4px 11px; font-family:inherit; }
+.print-card::before { content:''; position:absolute; inset:7px; border:1px solid rgba(201,168,76,0.35); pointer-events:none; }
+.pc-close { position:absolute; top:10px; right:12px; background:none; border:none; cursor:pointer; color:#b09060; font-size:0.95rem; padding:4px 7px; font-family:inherit; }
+.pc-do { position:absolute; top:10px; right:68px; background:none; border:1px solid #c9a84c; border-radius:3px; cursor:pointer; color:#6f6539; font-size:0.76rem; letter-spacing:0.1em; padding:4px 11px; font-family:inherit; }
 .pc-do:hover { background:#6f6539; color:#fff; }
-.pc-eyebrow { font-size:0.6rem; letter-spacing:0.42em; color:#8A5700; text-align:center; margin-bottom:8px; text-transform:uppercase; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-tailo { font-size:0.72rem; letter-spacing:0.22em; color:#633A27; text-align:center; margin-bottom:18px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,#D99414 30%,#D99414 70%,transparent); margin-bottom:26px; }
-.pc-title { font-size:1.9rem; color:#222222; text-align:center; letter-spacing:0.14em; font-weight:bold; line-height:1.2; margin-bottom:6px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-title .pc-bracket { font-size:0.78rem; color:#8A5700; vertical-align:middle; letter-spacing:0; }
-.pc-date { font-size:0.78rem; color:#8A5700; text-align:center; letter-spacing:0.2em; margin-bottom:28px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-mid { width:56px; height:1px; background:#c9a84c; margin:0 auto 26px; }
-.pc-dishes { flex:1; list-style:none; }
-.pc-dish { display:flex; align-items:baseline; gap:10px; padding:6px 0; border-bottom:1px dotted #e0d0b0; font-size:0.98rem; color:#1a1a1a; font-family:'B2Hana','Georgia',serif; }
+.pc-eyebrow { font-size:0.58rem; letter-spacing:0.38em; color:#8A5700; text-align:center; margin-bottom:3px; text-transform:uppercase; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-tailo { font-size:0.68rem; letter-spacing:0.18em; color:#633A27; text-align:center; margin-bottom:10px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-divider { width:100%; height:1px; background:linear-gradient(90deg,transparent,#D99414 30%,#D99414 70%,transparent); margin-bottom:10px; }
+.pc-title { font-size:1.6rem; color:#222222; text-align:center; letter-spacing:0.14em; font-weight:bold; line-height:1.2; margin-bottom:4px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-title .pc-bracket { font-size:0.72rem; color:#8A5700; vertical-align:middle; letter-spacing:0; }
+.pc-date { font-size:0.72rem; color:#8A5700; text-align:center; letter-spacing:0.18em; margin-bottom:10px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-mid { width:48px; height:1px; background:#D99414; margin:0 auto 10px; }
+.pc-dishes { flex:1; list-style:none; display:flex; flex-direction:column; }
+.pc-dish {
+  display:flex; align-items:baseline; gap:10px;
+  flex: 1;  /* 14 道平均分配高度 */
+  border-bottom:1px dotted #e0d0b0;
+  font-size:0.9rem; color:#1a1a1a; font-family:'B2Hana','Georgia',serif;
+  align-items: center;
+}
 .pc-dish:last-child { border-bottom:none; }
-.pc-dnum { font-size:0.65rem; color:#b09060; min-width:18px; font-family:'SweiB2SugarBold','Georgia',serif; }
-.pc-footer { margin-top:26px; text-align:center; font-size:0.58rem; color:#c9a84c; letter-spacing:0.3em; text-transform:uppercase; }
+.pc-dnum { font-size:0.62rem; color:#8A5700; min-width:18px; font-family:'SweiB2SugarBold','Georgia',serif; }
+.pc-footer { margin-top:8px; text-align:center; font-size:0.55rem; color:#D99414; letter-spacing:0.3em; text-transform:uppercase; }
 
 @media print {
   .top-nav, .menu-sidebar, .shopping-panel, .print-overlay .pc-close, .print-overlay .pc-do { display:none!important; }
@@ -394,7 +400,7 @@ body {
 .db-legend {
   padding:8px 36px; background:#FFF7E6; border-bottom:1px solid #D99414;
   display:flex; gap:18px; flex-wrap:wrap; align-items:center;
-  position: sticky; top: 116px; z-index: 99;
+  position: sticky; top: var(--toolbar-bottom, 116px); z-index: 99;
 }
 .leg-title { font-size:0.72rem; color:#8A5700; letter-spacing:0.15em; font-weight:bold; }
 .leg-item { display:flex; align-items:center; gap:5px; font-size:0.78rem; color:#222222; }
@@ -405,7 +411,7 @@ thead th {
   text-align:left; padding:10px 11px; font-size:0.72rem; letter-spacing:0.15em;
   color:#633A27; border-bottom:2px solid #D99414; white-space:nowrap;
   cursor:pointer; user-select:none; font-weight:bold;
-  background:#ffffff; position:sticky; top:160px;
+  background:#ffffff; position:sticky; top: var(--thead-top, 200px);
 }
 thead th:hover { color:#163B5C; }
 .sort-arr { font-size:0.6rem; margin-left:3px; }
@@ -727,7 +733,23 @@ function switchPage(p, tabEl) {
   document.getElementById('printBtn').style.display  = (isMenu && currentMenu) ? '' : 'none';
   document.getElementById('shopBtn').style.display   = (isMenu && currentMenu) ? '' : 'none';
   document.getElementById('exportBtn').style.display = isMenu ? 'none' : '';
-  if (p === 'db') renderDB();
+  if (p === 'db') {
+    renderDB();
+    // 動態計算 sticky 高度，等 DOM 更新後執行
+    requestAnimationFrame(() => fixStickyHeights());
+  }
+}
+
+function fixStickyHeights() {
+  const nav     = document.querySelector('.top-nav');
+  const toolbar = document.querySelector('.db-toolbar');
+  const legend  = document.querySelector('.db-legend');
+  if (!nav || !toolbar || !legend) return;
+  const navH     = nav.getBoundingClientRect().height;
+  const toolbarH = toolbar.getBoundingClientRect().height;
+  const legendH  = legend.getBoundingClientRect().height;
+  document.documentElement.style.setProperty('--toolbar-bottom', `${navH}px`);
+  document.documentElement.style.setProperty('--thead-top', `${navH + toolbarH + legendH}px`);
 }
 
 // ════════════════════════════════════════════════
@@ -1372,6 +1394,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('printBtn').style.display  = 'none';
   document.getElementById('shopBtn').style.display   = 'none';
   document.getElementById('exportBtn').style.display = 'none';
+  window.addEventListener('resize', () => {
+    if (document.getElementById('page-db').classList.contains('active')) {
+      fixStickyHeights();
+    }
+  });
 });
 </script>
 </body>
